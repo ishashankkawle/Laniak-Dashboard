@@ -6,7 +6,7 @@ import { MenuBarComponent } from './menu-bar/menu-bar.component';
 import { ComponentMenuComponent } from './component-menu/component-menu.component';
 import { EditorPageComponent } from './editor-page/editor-page.component';
 import { PageListComponent } from './page-list/page-list.component';
-import { CardListComponent } from './card-list/card-list.component';
+import { FolderListComponent } from './folder-list/folder-list.component';
 
 @NgModule({
   declarations: [
@@ -15,7 +15,7 @@ import { CardListComponent } from './card-list/card-list.component';
     ComponentMenuComponent,
     EditorPageComponent,
     PageListComponent,
-    CardListComponent
+    FolderListComponent
   ],
   imports: [
     BrowserModule
