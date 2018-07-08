@@ -1,0 +1,26 @@
+.CardList
+{
+    border: 1px solid black;
+    height:200px;
+    padding-top: 20px;
+    padding-bottom: 20px;
+}
+.ListOfCards
+{
+    height: 75%;
+    overflow-y: scroll;
+}
+.Title
+{
+    font-size: 1.5rem;
+    margin-bottom: 20px;
+}
+.item
+{
+    background-color: white;
+}
+.item:hover
+{
+    background-color: #eeeeee;
+    cursor: pointer;
+}

@@ -1,0 +1,32 @@
+.EditorPanal
+{
+    background-color: #eeeeee;
+    min-height: 450px;
+    height: auto;
+    padding: 50px;
+    border-top: 1px solid black;
+    margin-right: 0px;
+}
+.Editor
+{
+    width: 100%;
+    height: 100%;
+    resize: vertical;
+    border: none;
+    border-bottom: 2px solid #9575CD;
+    padding: 10px;
+}
+.Editor:focus
+{
+   outline: none;
+}
+.EditorPage
+{
+    background-color: white;
+    padding: 0px;
+    padding-top: 20px;
+    padding-bottom: 20px;
+    padding-left: 10px;
+    padding-right: 10px;
+    height: 100%;
+}
