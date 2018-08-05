@@ -1,9 +1,10 @@
 .FolderList
 {
     border: 1px solid black;
-    height:200px;
+    height:300px;
     padding-top: 20px;
     padding-bottom: 20px;
+    background-color: white;
 }
 .ListOfFolders
 {
@@ -18,37 +19,19 @@
 .item
 {
     background-color: white;
+    padding: 5px;
 }
 .item:hover
 {
     background-color: #eeeeee;
     cursor: pointer;
 }
+.itemSelected
+{
+    background-color: #6200EE;
+    color: white;
+}
 .FolderLogo
 {
     margin-right: 3px;
-}
-
-/* Scrollbar */
-::-webkit-scrollbar
-{
-    width: 10px;
-    border-radius: 10px;
-}
-
-/* Track */
-::-webkit-scrollbar-track {
-    background: #f1f1f1; 
-    border-radius: 10px;
-}
-
-/* Thumb */
-::-webkit-scrollbar-thumb
-{
-    background: #888888;
-    border-radius: 10px;
-}
-::-webkit-scrollbar-thumb:hover
-{
-    background: #555555;
 }

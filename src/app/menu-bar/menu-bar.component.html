@@ -8,35 +8,35 @@
     </div>
     <div class="col s8">
         <div class="col s12">
-          <span class="truncate">Current card</span>
+          <span class="truncate">{{datastoreService.CurrentFolder}}</span>
         </div>
         <div class="col s12">
-          <span class="truncate">Current page</span>
+          <span class="truncate">{{datastoreService.CurrentPage}}</span>
         </div>
     </div>
   </div>
 
-  <!--Page Menu Section-->
+  <!--Folder Menu Section-->
   <div class="col s8">
     <div class="col s6 right CardMenu">
-      <div class="col s4">
-        New Card
+      <div class="col s4" (click)="newFolderClick()">
+        New Folder
+      </div>
+      <div class="col s4" (click)="openFolderClick()">
+        Open Folder
       </div>
       <div class="col s4">
-        Open Card
-      </div>
-      <div class="col s4">
-        Remove Card
+        Remove Folder
       </div>
     </div>
   </div>
 
-  <!-- Card Menu Section-->
+  <!-- Page Menu Section-->
   <div class="row col s12 PageMenu">
-    <div class="col s1 MenuButton">
+    <div class="col s1 MenuButton" (click)="newPageClick()">
       New Page
     </div>
-    <div class="col s1 MenuButton">
+    <div class="col s1 MenuButton" (click)="openPageClick()">
       Open Page
     </div>
     <div class="col s1 MenuButton">

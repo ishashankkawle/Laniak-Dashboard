@@ -7,6 +7,14 @@ import { ComponentMenuComponent } from './component-menu/component-menu.componen
 import { EditorPageComponent } from './editor-page/editor-page.component';
 import { PageListComponent } from './page-list/page-list.component';
 import { FolderListComponent } from './folder-list/folder-list.component';
+import { DatastoreService } from '../services/datastore.service';
+import { OpenFolderPopupComponent } from './menu-bar/open-folder-popup/open-folder-popup.component';
+import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
+import {MatIconModule,MatListModule,MatDialogModule,MatButtonModule,MatInputModule} from '@angular/material';
+import { NewFolderPopupComponent } from './menu-bar/new-folder-popup/new-folder-popup.component';
+import { NewPagePopupComponent } from './menu-bar/new-page-popup/new-page-popup.component';
+import { OpenPagePopupComponent } from './menu-bar/open-page-popup/open-page-popup.component';
+
 
 @NgModule({
   declarations: [
@@ -15,12 +23,28 @@ import { FolderListComponent } from './folder-list/folder-list.component';
     ComponentMenuComponent,
     EditorPageComponent,
     PageListComponent,
-    FolderListComponent
+    FolderListComponent,
+    OpenFolderPopupComponent,
+    NewFolderPopupComponent,
+    NewPagePopupComponent,
+    OpenPagePopupComponent
   ],
+  entryComponents: [
+    OpenFolderPopupComponent,
+    NewFolderPopupComponent,
+    NewPagePopupComponent,
+    OpenPagePopupComponent
+],
   imports: [
-    BrowserModule
+    BrowserModule,
+    BrowserAnimationsModule,
+    MatIconModule,
+    MatListModule,
+    MatDialogModule,
+    MatButtonModule,
+    MatInputModule
   ],
-  providers: [],
+  providers: [DatastoreService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
