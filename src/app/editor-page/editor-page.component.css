@@ -46,3 +46,15 @@
 {
     border: 1px solid #eeeeee;
 }
+.Component
+{
+    border: none;
+    justify-content: center;
+    border-radius: 0px;
+    padding: 5px;
+    background: white;
+}
+.Comp-sec
+{
+    margin-left: 3px; 
+}

@@ -3,10 +3,32 @@
     <textarea class="Editor" placeholder="Type text here ..."></textarea>
   </div-->
 
+  <!-- Top Layer Buttons -->
+  <div class="row col s12 ComponentMenu">
+    <button type="button" class="col Component valign-wrapper" (click)="makeBold()"><i class="material-icons">format_bold</i></button>
+    <button type="button" class="col Component valign-wrapper" (click)="makeItalic()"><i class="material-icons">format_italic</i></button>
+    <button type="button" class="col Component valign-wrapper" (click)="makeUnderLine()"><i class="material-icons">format_underlined</i></button>
+    <button type="button" class="col Component valign-wrapper" (click)="makeStrikeThrough()"><i class="material-icons">format_strikethrough</i></button>
+
+    <button type="button" class="col Component Comp-sec valign-wrapper" (click)="alignLeft()"><i class="material-icons">format_align_left</i></button>
+    <button type="button" class="col Component valign-wrapper" (click)="alignCenter()"><i class="material-icons">format_align_center</i></button>
+    <button type="button" class="col Component valign-wrapper" (click)="alignRight()"><i class="material-icons">format_align_right</i></button>
+
+    <button type="button" class="col Component Comp-sec valign-wrapper" (click)="copy()"><i class="material-icons">content_copy</i></button>
+    <button type="button" class="col Component valign-wrapper" (click)="cut()"><i class="material-icons">content_cut</i></button>
+
+    <input type="color" class="col Component Comp-sec valign-wrapper" [(ngModel)]="fontColor" (change)="setFontColor()" style="min-height: 34px">
+    <input type="color" class="col Component valign-wrapper" [(ngModel)]="highlightColor" (change)="setHighLightColor()" style="min-height: 34px">
+    <button type="button" class="col Component valign-wrapper" (click)="subScript()"><i class="material-icons">expand_more</i></button>
+    <button type="button" class="col Component valign-wrapper" (click)="superScript()"><i class="material-icons">expand_less</i></button>
+
+  </div>
+
+  <!-- Editor Section -->
   <div class="col s12 EditorPage z-depth-3">
     <div class="col s12 row">
         <i class="material-icons tiny circle EditorIcon">border_color</i> Type Your Text Here ...
     </div>
-    <div contenteditable="true" class="col s12 Box"><br><br></div>
+    <div id="notepad" contenteditable class="col s12 Box"><br><br></div>
   </div>
-</div>  
+</div> 

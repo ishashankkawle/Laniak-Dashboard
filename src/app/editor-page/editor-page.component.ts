@@ -7,9 +7,83 @@ import { Component, OnInit } from '@angular/core';
 })
 export class EditorPageComponent implements OnInit {
 
-  constructor() { }
+  notepad: any;
+  fontColor : string = "#008800";
+  highlightColor : string = "#ffffff";
 
-  ngOnInit() {
+  constructor() { }
+  ngOnInit() 
+  {
+    this.notepad = document.getElementById("notepad");
   }
 
+  makeBold()
+  {
+    document.execCommand('bold',false,null);
+  }
+
+  makeItalic()
+  {
+    document.execCommand('italic',false,null);
+  }
+
+  makeUnderLine()
+  {
+    document.execCommand('underline',false,null);
+  }
+
+  makeStrikeThrough()
+  {
+    document.execCommand('strikeThrough',false,null);
+  }
+
+  alignLeft()
+  {
+    document.execCommand('justifyLeft',false,null);
+  }
+
+  alignCenter()
+  {
+    document.execCommand('justifyCenter',false,null);
+  }
+
+  alignRight()
+  {
+    document.execCommand('justifyRight',false,null);
+  }
+
+  copy()
+  {
+    document.execCommand('copy');
+  }
+
+  cut()
+  {
+    document.execCommand('cut');
+  }
+
+  setFontColor()
+  {
+    document.execCommand('foreColor', false, this.fontColor);
+  }
+
+  setHighLightColor()
+  {
+    document.execCommand('hiliteColor', false, this.highlightColor);
+  }
+
+  subScript()
+  {
+    document.execCommand('subscript', false, null);
+  }
+
+  superScript()
+  {
+    document.execCommand('superscript', false, null);
+  }
+
+  increaseSize()
+  {
+    document.execCommand('increaseFontSize', false, null);
+  }
 }
