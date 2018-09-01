@@ -11,6 +11,7 @@ import { DatastoreService } from '../../../services/datastore.service';
 export class OpenFolderPopupComponent implements OnInit {
 
   SelectedFolder : string;
+  // Make FolderList Dynamic
   FolderList : string[] = [
     "Folder 1",
     "Folder 2",
