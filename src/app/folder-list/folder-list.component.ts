@@ -9,33 +9,14 @@ import { DatastoreService } from '../../services/datastore.service';
 export class FolderListComponent implements OnInit 
 {
   SelectedFolder : string;
-  FolderList : string[] = [
-                            "Folder 1",
-                            "Folder 2",
-                            "Folder 3",
-                            "Folder 3",
-                            "Folder 3",
-                            "Folder 3",
-                            "Folder 3",
-                            "Folder 3",
-                            "Folder 3",
-                            "Folder 3",
-                            "Folder 3",
-                            "Folder 3",
-                            "Folder 3",
-                            "Folder 3",
-                            "Folder 3",
-                            "Folder 3",
-                            "Folder 3",
-                            "Folder 3",
-                            "Folder 3"]
+  FolderList : string[]
   constructor(private datastoreService : DatastoreService) 
   {
   }
 
   ngOnInit() 
   {
-    this.datastoreService.FolderList = this.FolderList;
+    this.FolderList = this.datastoreService.FolderList;
   }
 
   onSelected(folder : string) : void

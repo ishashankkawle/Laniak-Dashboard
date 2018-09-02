@@ -12,22 +12,12 @@ export class OpenFolderPopupComponent implements OnInit {
 
   SelectedFolder : string;
   // Make FolderList Dynamic
-  FolderList : string[] = [
-    "Folder 1",
-    "Folder 2",
-    "Folder 3",
-    "Folder 4",
-    "Folder 5",
-    "Folder 6",
-    "Folder 7",
-    "Folder 8",
-    "Folder 9",
-    "Folder 10"
-  ];
-
+  FolderList : string[]
   constructor(public dialogRef: MatDialogRef<OpenFolderPopupComponent>, public datastoreService : DatastoreService) { }
 
-  ngOnInit() {
+  ngOnInit() 
+  {
+    this.FolderList = this.datastoreService.FolderList
   }
 
   onFolderClicked(folder : string):void

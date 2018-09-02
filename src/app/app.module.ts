@@ -14,6 +14,9 @@ import {MatIconModule,MatListModule,MatDialogModule,MatButtonModule,MatInputModu
 import { NewFolderPopupComponent } from './menu-bar/new-folder-popup/new-folder-popup.component';
 import { NewPagePopupComponent } from './menu-bar/new-page-popup/new-page-popup.component';
 import { OpenPagePopupComponent } from './menu-bar/open-page-popup/open-page-popup.component';
+import { HttpClientModule } from '@angular/common/http';
+import { UtilService } from '../services/util.service';
+import { FolderLoadService } from '../services/folder-load.service';
 
 
 @NgModule({
@@ -36,15 +39,16 @@ import { OpenPagePopupComponent } from './menu-bar/open-page-popup/open-page-pop
 ],
   imports: [
     BrowserModule,
+    HttpClientModule,
     FormsModule,
     BrowserAnimationsModule,
     MatIconModule,
     MatListModule,
     MatDialogModule,
     MatButtonModule,
-    MatInputModule
+    MatInputModule,
   ],
-  providers: [DatastoreService],
+  providers: [DatastoreService,UtilService,FolderLoadService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
