@@ -19,16 +19,18 @@
 
     <input type="color" class="col Component Comp-sec valign-wrapper" [(ngModel)]="fontColor" (change)="setFontColor()" style="min-height: 34px">
     <input type="color" class="col Component valign-wrapper" [(ngModel)]="highlightColor" (change)="setHighLightColor()" style="min-height: 34px">
-    <button type="button" class="col Component valign-wrapper" (click)="subScript()"><i class="material-icons">expand_more</i></button>
-    <button type="button" class="col Component valign-wrapper" (click)="superScript()"><i class="material-icons">expand_less</i></button>
+    <button type="button" class="col Component valign-wrapper" (click)="subScript()"><i class="material-icons">vertical_align_bottom</i></button>
+    <button type="button" class="col Component valign-wrapper" (click)="superScript()"><i class="material-icons">vertical_align_top</i></button>
+
+    <button type="button" class="col Component Comp-sec valign-wrapper" (click)="makeTitle()"><i class="material-icons">title</i></button> 
 
   </div>
 
-  <!-- Editor Section -->
-  <div class="col s12 EditorPage z-depth-3">
-    <div class="col s12 row">
-        <i class="material-icons tiny circle EditorIcon">border_color</i> Type Your Text Here ...
-    </div>
-    <div id="notepad" contenteditable class="col s12 Box"><br><br></div>
+      <!-- Editor Section -->
+      <div class="col s12 EditorPage z-depth-3">
+        <div class="col s12 row">
+          <i class="material-icons tiny circle EditorIcon">border_color</i> Type Your Text Here ...
+        </div>
+        <div id="notepad" contenteditable class="col s12 Box"><br><br></div>
+      </div>
   </div>
-</div> 
