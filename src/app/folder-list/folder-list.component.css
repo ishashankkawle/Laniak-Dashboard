@@ -1,14 +1,14 @@
 .FolderList
 {
     border: 1px solid black;
-    height:450px;
     padding-top: 20px;
+    height: 450px;
     padding-bottom: 20px;
     background-color: white;
 }
 .ListOfFolders
 {
-    height: 75%;
+    height: 85%;
     overflow-y: scroll;
 }
 .Title

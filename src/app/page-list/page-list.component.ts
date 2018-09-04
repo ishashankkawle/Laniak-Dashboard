@@ -9,24 +9,14 @@ import { DatastoreService } from '../../services/datastore.service';
 export class PageListComponent implements OnInit 
 {
   SelectedPage : string;
-  PageList : string[] = ["Page 1", 
-                          "Page 2",
-                          "Page 3",
-                          "Page 4",
-                          "Page 5",
-                          "Page 6",
-                          "Page 7",
-                          "Page 8",
-                          "Page 9",
-                          "Page 10",
-                          "Page 11"];
+  PageList : string[]
 
   constructor(private datastoreService : DatastoreService)
    { }
 
   ngOnInit() 
   { 
-    this.datastoreService.PageList = this.PageList;
+    this.PageList = this.datastoreService.PageList ;
   }
 
   onSelected(page : string) : void

@@ -1,10 +1,6 @@
 export class SharedDataAssets
 {
-    public CurrentFolder : string ;
-    public CurrentPage : string ;
-    constructor()
-    {
-        this.CurrentFolder = "New Folder";
-        this.CurrentPage = "Amazing Page";
-    }
+    static BASE_URI : string = "https://api.github.com/repos"
+    static USER_NAME : string = "Shashankkawle"
+    static REPOSITORY_NAME : string = "DOCS"
 }
