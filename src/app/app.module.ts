@@ -16,7 +16,7 @@ import { NewPagePopupComponent } from './menu-bar/new-page-popup/new-page-popup.
 import { OpenPagePopupComponent } from './menu-bar/open-page-popup/open-page-popup.component';
 import { HttpClientModule } from '@angular/common/http';
 import { UtilService } from '../services/util.service';
-import { FolderLoadService } from '../services/folder-load.service';
+import { FPLoadService } from '../services/fp-load.service';
 
 
 @NgModule({
@@ -48,7 +48,7 @@ import { FolderLoadService } from '../services/folder-load.service';
     MatButtonModule,
     MatInputModule,
   ],
-  providers: [DatastoreService,UtilService,FolderLoadService],
+  providers: [DatastoreService,UtilService,FPLoadService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

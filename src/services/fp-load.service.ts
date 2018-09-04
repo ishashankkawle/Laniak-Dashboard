@@ -7,7 +7,7 @@ import { folderResponse } from '../Models/folderResponse';
 @Injectable({
   providedIn: 'root'
 })
-export class FolderLoadService {
+export class FPLoadService {
 
   private url: string;
 

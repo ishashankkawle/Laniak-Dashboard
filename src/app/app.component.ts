@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 import { DatastoreService } from '../services/datastore.service';
-import { FolderLoadService } from '../services/folder-load.service';
+import { FPLoadService } from '../services/fp-load.service';
 import {folderResponse} from '../Models/folderResponse'
 
 @Component({
@@ -14,7 +14,7 @@ export class AppComponent
 
   folders : folderResponse[]
 
-  constructor(private datastoreService : DatastoreService, private folderService : FolderLoadService){}
+  constructor(private datastoreService : DatastoreService, private folderService : FPLoadService){}
    
   ngOnInit()
   {
