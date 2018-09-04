@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
 import { DatastoreService } from '../services/datastore.service';
 import { FPLoadService } from '../services/fp-load.service';
-import {folderResponse} from '../Models/folderResponse'
+import {fpResponse} from '../Models/fpResponse'
 
 @Component({
   selector: 'app-root',
@@ -12,16 +12,16 @@ export class AppComponent
 {
   title = 'app';
 
-  folders : folderResponse[]
+  folders : fpResponse[]
 
-  constructor(private datastoreService : DatastoreService, private folderService : FPLoadService){}
+  constructor(private datastoreService : DatastoreService, private fpService : FPLoadService){}
    
   ngOnInit()
   {
-    this.folderService.getAllFolders().subscribe((data : folderResponse[]) => this.assignFolderList(data))
+    this.fpService.getAllFolders().subscribe((data : fpResponse[]) => this.assignFolderList(data))
   }
 
-  assignFolderList(data: folderResponse[])
+  assignFolderList(data: fpResponse[])
   {
     this.folders = data
     data.forEach(element => {

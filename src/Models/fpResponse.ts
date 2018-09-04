@@ -1,4 +1,4 @@
-export interface folderResponse {
+export interface fpResponse {
     name: string;
     path: string;
     sha: string;
