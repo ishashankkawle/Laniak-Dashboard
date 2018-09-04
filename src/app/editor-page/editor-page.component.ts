@@ -8,82 +8,67 @@ import { Component, OnInit } from '@angular/core';
 export class EditorPageComponent implements OnInit {
 
   notepad: any;
-  fontColor : string = "#008800";
-  highlightColor : string = "#ffffff";
+  fontColor = '#008800';
+  highlightColor = '#ffffff';
 
   constructor() { }
-  ngOnInit() 
-  {
-    this.notepad = document.getElementById("notepad");
+  ngOnInit() {
+    this.notepad = document.getElementById('notepad');
   }
 
-  makeBold()
-  {
-    document.execCommand('bold',false,null);
+  makeBold() {
+    document.execCommand('bold', false, null);
   }
 
-  makeItalic()
-  {
-    document.execCommand('italic',false,null);
+  makeItalic() {
+    document.execCommand('italic', false, null);
   }
 
-  makeUnderLine()
-  {
-    document.execCommand('underline',false,null);
+  makeUnderLine() {
+    document.execCommand('underline', false, null);
   }
 
-  makeStrikeThrough()
-  {
-    document.execCommand('strikeThrough',false,null);
+  makeStrikeThrough() {
+    document.execCommand('strikeThrough', false, null);
   }
 
-  alignLeft()
-  {
-    document.execCommand('justifyLeft',false,null);
+  alignLeft() {
+    document.execCommand('justifyLeft', false, null);
   }
 
-  alignCenter()
-  {
-    document.execCommand('justifyCenter',false,null);
+  alignCenter() {
+    document.execCommand('justifyCenter', false, null);
   }
 
-  alignRight()
-  {
-    document.execCommand('justifyRight',false,null);
+  alignRight() {
+    document.execCommand('justifyRight', false, null);
   }
 
-  copy()
-  {
+  copy() {
     document.execCommand('copy');
   }
 
-  cut()
-  {
+  cut() {
     document.execCommand('cut');
   }
 
-  setFontColor()
-  {
+  setFontColor() {
     document.execCommand('foreColor', false, this.fontColor);
   }
 
-  setHighLightColor()
-  {
+  setHighLightColor() {
     document.execCommand('hiliteColor', false, this.highlightColor);
   }
 
-  subScript()
-  {
+  subScript() {
     document.execCommand('subscript', false, null);
   }
 
-  superScript()
-  {
+  superScript() {
     document.execCommand('superscript', false, null);
   }
 
-  increaseSize()
-  {
+  increaseSize() {
     document.execCommand('increaseFontSize', false, null);
   }
 }
