@@ -13,22 +13,12 @@ export class AppComponent
   title = 'app';
 
   folders : fpResponse[]
+  pages : fpResponse[]
 
   constructor(private datastoreService : DatastoreService, private fpService : FPLoadService){}
    
   ngOnInit()
   {
-    this.fpService.getAllFolders().subscribe((data : fpResponse[]) => this.assignFolderList(data))
-  }
-
-  assignFolderList(data: fpResponse[])
-  {
-    this.folders = data
-    data.forEach(element => {
-      if (element.type == "dir")
-      {
-        this.datastoreService.FolderList.push(element.name)
-      }
-    });
+    this.fpService.IitialLoading()
   }
 }

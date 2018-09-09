@@ -9,6 +9,8 @@ import { DatastoreService } from '../../../services/datastore.service';
 })
 export class NewFolderPopupComponent implements OnInit {
 
+  folderName : string
+
   constructor(public dialogRef: MatDialogRef<NewFolderPopupComponent>, public datastoreService : DatastoreService) { }
 
   ngOnInit() {
@@ -18,6 +20,7 @@ export class NewFolderPopupComponent implements OnInit {
   {
     this.dialogRef.close();
     // Call github API to create new directory
+    console.log(this.folderName)
   }
 
 }
