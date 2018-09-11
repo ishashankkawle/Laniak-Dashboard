@@ -1,8 +1,9 @@
 import { Component, OnInit, Inject } from '@angular/core';
 import { DatastoreService } from '../../services/datastore.service';
-import { FPLoadService } from '../../services/fp-load.service';
+import { FolderService } from '../../services/folder-service.service';
 import { folderResponse } from '../../Models/folderResponse';
 import { pageResponse } from '../../Models/pageResponse';
+import { PageService } from '../../services/page-service.service';
 
 @Component({
   selector: 'app-card-list',
@@ -13,7 +14,7 @@ export class FolderListComponent implements OnInit
 {
   SelectedFolder : string;
   FolderList : string[]
-  constructor(private datastoreService : DatastoreService, private fpService : FPLoadService) 
+  constructor(private datastoreService : DatastoreService, private folderService : FolderService, private pageService : PageService) 
   {
   }
 
@@ -27,7 +28,7 @@ export class FolderListComponent implements OnInit
     this.SelectedFolder  = folder;
     this.datastoreService.setFolder(folder);
     this.datastoreService.PageList = []
-    this.fpService.loadPages(this.SelectedFolder).subscribe((data : pageResponse[]) => this.fpService.assignPageList(data))
+    this.pageService.loadPages(this.SelectedFolder).subscribe((data : pageResponse[]) => this.pageService.assignPageList(data))
   }
 
 }

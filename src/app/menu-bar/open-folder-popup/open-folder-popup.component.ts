@@ -1,9 +1,10 @@
 import { Component, OnInit } from '@angular/core';
 import {MatDialogRef} from '@angular/material';
 import { DatastoreService } from '../../../services/datastore.service';
-import { FPLoadService } from '../../../services/fp-load.service';
+import { FolderService } from '../../../services/folder-service.service';
 import { folderResponse } from '../../../Models/folderResponse';
 import { pageResponse } from '../../../Models/pageResponse';
+import { PageService } from '../../../services/page-service.service';
 
 
 @Component({
@@ -16,7 +17,7 @@ export class OpenFolderPopupComponent implements OnInit {
   SelectedFolder : string;
   // Make FolderList Dynamic
   FolderList : string[]
-  constructor(public dialogRef: MatDialogRef<OpenFolderPopupComponent>, public datastoreService : DatastoreService, private fpservice : FPLoadService) { }
+  constructor(public dialogRef: MatDialogRef<OpenFolderPopupComponent>, public datastoreService : DatastoreService, private pageservice : PageService) { }
 
   ngOnInit() 
   {
@@ -33,6 +34,6 @@ export class OpenFolderPopupComponent implements OnInit {
   {
     this.dialogRef.close();
     this.datastoreService.PageList = []
-    this.fpservice.loadPages(this.SelectedFolder).subscribe((data : pageResponse[]) => this.fpservice.assignPageList(data))
+    this.pageservice.loadPages(this.SelectedFolder).subscribe((data : pageResponse[]) => this.pageservice.assignPageList(data))
     }
 }
