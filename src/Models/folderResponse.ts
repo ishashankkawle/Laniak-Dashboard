@@ -1,0 +1,35 @@
+/// <summary>
+/// Github RESPONSE
+/// </summary>
+
+// export interface fpResponse {
+//     name: string;
+//     path: string;
+//     sha: string;
+//     size: number;
+//     url: string;
+//     html_url: string;
+//     git_url: string;
+//     download_url?: string | null;
+//     type: string;
+//     _links: Links;
+//   }
+//   export interface Links {
+//     self: string;
+//     git: string;
+//     html: string;
+//   }
+  
+// ------------------------------------------------------------------
+
+/// <summary>
+/// GitLab RESPONSE
+/// </summary>
+
+export interface folderResponse {
+  id: string;
+  name: string;
+  type: string;
+  path: string;
+  mode: string;
+}

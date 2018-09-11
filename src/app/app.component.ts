@@ -1,7 +1,8 @@
 import { Component } from '@angular/core';
 import { DatastoreService } from '../services/datastore.service';
 import { FPLoadService } from '../services/fp-load.service';
-import {fpResponse} from '../Models/fpResponse'
+import {folderResponse} from '../Models/folderResponse'
+import { pageResponse } from '../Models/pageResponse';
 
 @Component({
   selector: 'app-root',
@@ -12,8 +13,8 @@ export class AppComponent
 {
   title = 'app';
 
-  folders : fpResponse[]
-  pages : fpResponse[]
+  folders : folderResponse[]
+  pages : pageResponse[]
 
   constructor(private datastoreService : DatastoreService, private fpService : FPLoadService){}
    

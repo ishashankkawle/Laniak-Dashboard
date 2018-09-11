@@ -2,7 +2,8 @@ import { Component, OnInit } from '@angular/core';
 import {MatDialogRef} from '@angular/material';
 import { DatastoreService } from '../../../services/datastore.service';
 import { FPLoadService } from '../../../services/fp-load.service';
-import { fpResponse } from '../../../Models/fpResponse';
+import { folderResponse } from '../../../Models/folderResponse';
+import { pageResponse } from '../../../Models/pageResponse';
 
 
 @Component({
@@ -32,6 +33,6 @@ export class OpenFolderPopupComponent implements OnInit {
   {
     this.dialogRef.close();
     this.datastoreService.PageList = []
-    this.fpservice.loadPages(this.SelectedFolder).subscribe((data : fpResponse[]) => this.fpservice.assignPageList(data))
+    this.fpservice.loadPages(this.SelectedFolder).subscribe((data : pageResponse[]) => this.fpservice.assignPageList(data))
     }
 }

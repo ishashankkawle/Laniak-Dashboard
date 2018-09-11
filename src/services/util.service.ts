@@ -7,8 +7,8 @@ export class UtilService {
 
   constructor() { }
 
-  static generateUrl(base : string, username : string, repo : string)
+  static generateUrl(base : string, projectId : string)
   {
-    return base + "/" + username + "/" + repo
+    return base + "/" + projectId
   }
 }
