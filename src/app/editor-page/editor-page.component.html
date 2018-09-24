@@ -22,13 +22,19 @@
     <button type="button" class="col Component valign-wrapper" (click)="subScript()"><i class="material-icons">vertical_align_bottom</i></button>
     <button type="button" class="col Component valign-wrapper" (click)="superScript()"><i class="material-icons">vertical_align_top</i></button>
 
-
   </div>
 
       <!-- Editor Section -->
       <div class="col s12 EditorPage z-depth-3">
         <div class="col s12 row">
-          <i class="material-icons tiny circle EditorIcon">border_color</i> Type Your Text Here ...
+          <div class="col s6">
+              <i class="material-icons tiny circle EditorIcon ">border_color</i> Type Your Text Here ...
+          </div>
+          <div class="right-align col s6">
+            <button type="button" class="editor-action editor-action-save" (click)="saveData()">Save</button>
+            <button type="button" class="editor-action editor-action-reset" (click)="reloadData()">Reset</button>
+            <button type="button" class="editor-action editor-action-clear" (click)="clearData()">Clear</button>
+          </div>
         </div>
         <div id="notepad" contenteditable class="col s12 Box"><br><br></div>
       </div>

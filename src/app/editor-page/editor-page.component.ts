@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { PageService } from '../../services/page-service.service';
+import { DatastoreService } from '../../services/datastore.service';
 
 @Component({
   selector: 'app-editor-page',
@@ -11,7 +13,7 @@ export class EditorPageComponent implements OnInit {
   fontColor = '#008800';
   highlightColor = '#ffffff';
 
-  constructor() { }
+  constructor(private pageService : PageService, private datastoreService : DatastoreService) { }
   ngOnInit() {
     this.notepad = document.getElementById('notepad');
   }
@@ -70,5 +72,19 @@ export class EditorPageComponent implements OnInit {
 
   increaseSize() {
     document.execCommand('increaseFontSize', false, null);
+  }
+
+  saveData()
+  {
+  }
+
+  reloadData()
+  {
+    this.pageService.loadRaw(this.datastoreService.CurrentPage).subscribe((data : string)=>this.notepad.innerText = data)
+  }
+
+  clearData()
+  {
+    this.notepad.innerText = ""
   }
 }

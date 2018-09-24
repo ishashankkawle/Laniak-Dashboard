@@ -58,3 +58,39 @@
 {
     margin-left: 3px; 
 }
+.editor-action
+{
+    padding-top: 5.625px;
+    padding-bottom: 5.625px;
+    padding-left: 11.250px;
+    padding-right: 11.250px;
+    margin-left:2px;
+    margin-right: 2px; 
+    color: white;
+    border: 0px;
+    border-radius: 4px;
+}
+.editor-action-save
+{
+    background-color: #4daf50;
+}
+.editor-action-reset
+{
+    background-color: #0367d1;
+}
+.editor-action-clear
+{
+    background-color: #e43b4c; 
+}
+.editor-action-save:hover
+{
+    background-color: #218838 ;
+}
+.editor-action-reset:hover
+{
+    background-color: #0354ab;
+}
+.editor-action-clear:hover
+{
+    background-color: #c82333; 
+}

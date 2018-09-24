@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { DatastoreService } from '../../services/datastore.service';
+import { EditorService } from '../../services/editor-service.service';
+import { PageService } from '../../services/page-service.service';
 
 @Component({
   selector: 'app-page-list',
@@ -11,7 +13,7 @@ export class PageListComponent implements OnInit
   SelectedPage : string;
   PageList : string[]
 
-  constructor(private datastoreService : DatastoreService)
+  constructor(private datastoreService : DatastoreService, public editor : EditorService, public pageService : PageService)
    { }
 
   ngOnInit() 
@@ -23,6 +25,7 @@ export class PageListComponent implements OnInit
   {
     this.SelectedPage = page;
     this.datastoreService.setPage(page);
+    this.pageService.loadRaw(this.SelectedPage).subscribe((data : string) => this.editor.loadTextOnEditor(data))
   }
 
 }

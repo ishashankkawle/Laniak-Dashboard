@@ -1,6 +1,9 @@
 import { Component, OnInit } from '@angular/core';
 import { MatDialogRef } from '../../../../node_modules/@angular/material/dialog';
 import { DatastoreService } from '../../../services/datastore.service';
+import { PageService } from '../../../services/page-service.service';
+import { HttpErrorResponse } from '@angular/common/http';
+import { EditorService } from '../../../services/editor-service.service';
 
 @Component({
   selector: 'app-open-page-popup',
@@ -12,7 +15,7 @@ export class OpenPagePopupComponent implements OnInit {
   SelectedPage : string;
   PageList : string[] 
 
-  constructor(public dialogRef: MatDialogRef<OpenPagePopupComponent>, public datastoreService : DatastoreService) { }
+  constructor(public dialogRef: MatDialogRef<OpenPagePopupComponent>, public datastoreService : DatastoreService, public pageService : PageService, public editor : EditorService) { }
 
   ngOnInit() 
   {
@@ -21,12 +24,13 @@ export class OpenPagePopupComponent implements OnInit {
 
   onPageClicked(page : string):void
   {
-    this.datastoreService.setPage(page); 
+    this.datastoreService.setPage(page)
+    this.SelectedPage = page
   }
 
   onPageSelect(): void
   {
     this.dialogRef.close();
-    // Refresh PageList[] in dataservice.
+    this.pageService.loadRaw(this.SelectedPage).subscribe((data : string) => this.editor.loadTextOnEditor(data))
   }
 }
