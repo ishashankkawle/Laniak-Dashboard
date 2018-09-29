@@ -3,8 +3,8 @@
   <br><br>
   <div class="col s12 ListOfFolders">
     <ul class="Folders">
-      <li class="item valign-wrapper" *ngFor = "let folder of FolderList" (click) = "onSelected(folder)" [class.itemSelected] = "folder === datastoreService.CurrentFolder"> 
-        <i class="material-icons FolderLogo">folder</i>{{folder}}
+      <li class="item valign-wrapper" *ngFor = "let folder of this.datastoreService.FolderList" (click) = "onSelected(folder)" [class.itemSelected] = "folder === datastoreService.CurrentFolder"> 
+        <i class="material-icons FolderLogo">folder</i>{{folder}}<i class="material-icons FolderLogo tiny deleteIcon">cancel</i>
       </li>
     </ul>
   </div>

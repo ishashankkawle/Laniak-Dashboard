@@ -13,15 +13,12 @@ import { PageService } from '../../services/page-service.service';
 export class FolderListComponent implements OnInit 
 {
   SelectedFolder : string;
-  FolderList : string[]
   constructor(private datastoreService : DatastoreService, private folderService : FolderService, private pageService : PageService) 
   {
   }
 
   ngOnInit() 
-  {
-    this.FolderList = this.datastoreService.FolderList;
-  }
+  { }
 
   onSelected(folder : string) : void
   {

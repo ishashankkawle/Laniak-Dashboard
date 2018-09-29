@@ -3,8 +3,8 @@
   <br><br>
   <div class="col s12 ListOfPages">
     <ul class="Pages">
-      <li class="item" *ngFor = "let page of PageList"  (click) = "onSelected(page)" [class.itemSelected] = "page === datastoreService.CurrentPage">  
-        <i class="material-icons tiny PageLogo">content_copy</i>{{page}}
+      <li class="item" *ngFor = "let page of this.datastoreService.PageList"  (click) = "onSelected(page)" [class.itemSelected] = "page === datastoreService.CurrentPage">  
+        <i class="material-icons tiny PageLogo">content_copy</i>{{page}}<i class="material-icons PageLogo tiny deleteIcon">cancel</i>
       </li>
     </ul>
   </div>

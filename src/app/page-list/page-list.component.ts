@@ -11,15 +11,12 @@ import { PageService } from '../../services/page-service.service';
 export class PageListComponent implements OnInit 
 {
   SelectedPage : string;
-  PageList : string[]
 
   constructor(private datastoreService : DatastoreService, public editor : EditorService, public pageService : PageService)
    { }
 
   ngOnInit() 
-  { 
-    this.PageList = this.datastoreService.PageList ;
-  }
+  { }
 
   onSelected(page : string) : void
   {

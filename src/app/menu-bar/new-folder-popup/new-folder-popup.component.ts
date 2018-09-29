@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { MatDialogRef } from '../../../../node_modules/@angular/material/dialog';
 import { DatastoreService } from '../../../services/datastore.service';
+import { FolderService } from '../../../services/folder-service.service';
+import { fpCreationResponse } from '../../../Models/fpCreationResponse';
 
 @Component({
   selector: 'app-new-folder-popup',
@@ -11,7 +13,7 @@ export class NewFolderPopupComponent implements OnInit {
 
   folderName : string
 
-  constructor(public dialogRef: MatDialogRef<NewFolderPopupComponent>, public datastoreService : DatastoreService) { }
+  constructor(public dialogRef: MatDialogRef<NewFolderPopupComponent>, public datastoreService : DatastoreService, private folderService : FolderService) { }
 
   ngOnInit() {
   }
@@ -19,8 +21,11 @@ export class NewFolderPopupComponent implements OnInit {
   onFolderCreate(): void
   {
     this.dialogRef.close();
-    // Call github API to create new directory
-    console.log(this.folderName)
+    this.folderService.createFolder(this.folderName).subscribe((data : fpCreationResponse) => this.updateDisplayValues(data))
   }
 
+  updateDisplayValues(data : fpCreationResponse)
+  {
+    this.folderService.addFolderInFolderList(this.folderName)
+  }
 }

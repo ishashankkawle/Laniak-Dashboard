@@ -1,8 +1,8 @@
 <h1 mat-dialog-title>New Page</h1>
 <div mat-dialog-content>
-    <span>Your page will be added in <b>{{datastoreService.CurrentFolder}}</b></span><br><br>
-   
-    <input placeholder="New page name">
+    <span>Your page will be added in <b>{{datastoreService.CurrentFolder}}</b></span>
+    <blockquote class="warning-ext">By default the extention will be .md</blockquote><br><br>
+    <input placeholder="Ex. Laniak" [(ngModel)]="pageName">
 </div>
 <div mat-dialog-actions>
   <button mat-raised-button	color = "primary" (click)="onPageCreate()">Ok</button>

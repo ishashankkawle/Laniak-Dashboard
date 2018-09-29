@@ -18,13 +18,11 @@ export class DatastoreService
   public setFolder(FolderName : string): void
   {
     this.CurrentFolder  = FolderName;
-    console.log(FolderName);
   }
 
   public setPage(PageName : string): void
   {
     this.CurrentPage = PageName;
-    console.log(PageName);
   }
 
 }

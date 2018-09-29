@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { MatDialogRef } from '../../../../node_modules/@angular/material/dialog';
 import { DatastoreService } from '../../../services/datastore.service';
+import { PageService } from '../../../services/page-service.service';
+import { fpCreationResponse } from '../../../Models/fpCreationResponse';
 
 @Component({
   selector: 'app-new-page-popup',
@@ -9,7 +11,9 @@ import { DatastoreService } from '../../../services/datastore.service';
 })
 export class NewPagePopupComponent implements OnInit {
 
-  constructor(public dialogRef: MatDialogRef<NewPagePopupComponent>, public datastoreService : DatastoreService) { }
+  pageName : string = ""
+
+  constructor(public dialogRef: MatDialogRef<NewPagePopupComponent>, public datastoreService : DatastoreService,private  pageService : PageService) { }
 
   ngOnInit() {
   }
@@ -17,6 +21,11 @@ export class NewPagePopupComponent implements OnInit {
   onPageCreate(): void
   {
     this.dialogRef.close();
-    //Call Git API to create new md file.
+    this.pageService.createPage(this.pageName).subscribe((data:fpCreationResponse) => this.updateDisplayValues(data) )
+  }
+
+  updateDisplayValues(data : fpCreationResponse)
+  {
+    this.pageService.addPageInPageList(this.pageName)
   }
 }
