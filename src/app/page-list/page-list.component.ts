@@ -25,4 +25,9 @@ export class PageListComponent implements OnInit
     this.pageService.loadRaw(this.SelectedPage).subscribe((data : string) => this.editor.loadTextOnEditor(data))
   }
 
+  onDelete(page : string)
+  {
+    this.pageService.deletePage(page).subscribe(()=> this.pageService.removePageFromPageList(page))
+  }
+
 }

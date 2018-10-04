@@ -35,7 +35,14 @@ export class CoreService
       "content" : data,
       "commit_message" : msg
     }
+    return body
+  }
 
+  public getDJsonBody(msg : string = 'Deleted a file')
+  {
+    var body = {
+      "commit_message" : msg
+    }
     return body
   }
 }

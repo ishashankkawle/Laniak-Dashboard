@@ -6,6 +6,7 @@ import {MatDialog} from '@angular/material';
 import { NewFolderPopupComponent } from './new-folder-popup/new-folder-popup.component';
 import { NewPagePopupComponent } from './new-page-popup/new-page-popup.component';
 import { OpenPagePopupComponent } from './open-page-popup/open-page-popup.component';
+import { RemovePagePopupComponent } from './remove-page-popup/remove-page-popup.component';
 
 @Component({
   selector: 'app-menu-bar',
@@ -41,6 +42,14 @@ export class MenuBarComponent implements OnInit
   openPageClick(): void
   {
     let dialogRef = this.dialog.open(OpenPagePopupComponent,{width: '500px'});
+
+    // Un-comment following to add additional functionality 
+    // dialogRef.afterClosed().subscribe(result => {});
+  }
+
+  removePageClick(): void
+  {
+    let dialogRef = this.dialog.open(RemovePagePopupComponent,{width: '500px'});
 
     // Un-comment following to add additional functionality 
     // dialogRef.afterClosed().subscribe(result => {});

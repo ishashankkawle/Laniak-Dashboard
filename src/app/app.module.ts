@@ -17,6 +17,7 @@ import { OpenPagePopupComponent } from './menu-bar/open-page-popup/open-page-pop
 import { HttpClientModule } from '@angular/common/http';
 import { FolderService } from '../services/folder-service.service';
 import { PageService } from '../services/page-service.service';
+import { RemovePagePopupComponent } from './menu-bar/remove-page-popup/remove-page-popup.component';
 
 
 @NgModule({
@@ -29,13 +30,15 @@ import { PageService } from '../services/page-service.service';
     OpenFolderPopupComponent,
     NewFolderPopupComponent,
     NewPagePopupComponent,
-    OpenPagePopupComponent
+    OpenPagePopupComponent,
+    RemovePagePopupComponent,
   ],
   entryComponents: [
     OpenFolderPopupComponent,
     NewFolderPopupComponent,
     NewPagePopupComponent,
-    OpenPagePopupComponent
+    OpenPagePopupComponent,
+    RemovePagePopupComponent
 ],
   imports: [
     BrowserModule,
