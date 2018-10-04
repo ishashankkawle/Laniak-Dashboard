@@ -13,4 +13,9 @@ export class EditorService {
   {
     document.getElementById('notepad').innerText = text
   }
+
+  public getTextFromEditor()
+  {
+    return document.getElementById('notepad').innerText;
+  }
 }

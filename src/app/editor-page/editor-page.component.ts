@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { PageService } from '../../services/page-service.service';
 import { DatastoreService } from '../../services/datastore.service';
+import { EditorService } from '../../services/editor-service.service';
 
 @Component({
   selector: 'app-editor-page',
@@ -13,7 +14,8 @@ export class EditorPageComponent implements OnInit {
   fontColor = '#008800';
   highlightColor = '#ffffff';
 
-  constructor(private pageService : PageService, private datastoreService : DatastoreService) { }
+  constructor(private pageService : PageService, private datastoreService : DatastoreService ,private editorSerice : EditorService) { }
+
   ngOnInit() {
     this.notepad = document.getElementById('notepad');
   }
@@ -76,6 +78,8 @@ export class EditorPageComponent implements OnInit {
 
   saveData()
   {
+    let contents = this.editorSerice.getTextFromEditor()
+    this.pageService.updatePage(contents).subscribe(()=> console.log("updated"))
   }
 
   reloadData()

@@ -4,13 +4,14 @@ import { CoreService } from './core-service.service';
 import { HttpClient } from '@angular/common/http';
 import { pageResponse } from '../Models/pageResponse';
 import { SharedDataAssets } from '../global/shareddata';
+import { FolderService } from './folder-service.service';
 
 @Injectable({
   providedIn: 'root'
 })
 export class PageService extends CoreService {
 
-  constructor(private http : HttpClient, private datastoreService : DatastoreService) 
+  constructor(private http : HttpClient, private datastoreService : DatastoreService, private folderService : FolderService) 
   {
     super()
   }
@@ -44,6 +45,14 @@ export class PageService extends CoreService {
     let Adminheaders = this.AdminHeaderOptions;
     let link = this.url + "files/" + this.datastoreService.CurrentFolder + "%2F" + pageName + "?branch=master";
     return this.http.request('delete' , link ,  { body: reqBody , headers: Adminheaders.headers})
+  }
+
+  updatePage(contents: string)
+  {
+   let reqBody = this.getCUJsonBody()
+   reqBody.content = contents
+   let link = this.url + "files/" + this.datastoreService.CurrentFolder + "%2F" +  this.datastoreService.CurrentPage + "?branch=master";
+   return this.http.put(link , reqBody , this.AdminHeaderOptions);
   }
 
   assignPageList(data: pageResponse[])
@@ -82,6 +91,10 @@ export class PageService extends CoreService {
       {
         this.datastoreService.PageList.push(temp.pop())
       } 
+    }
+    else
+    {
+      this.folderService.removeFolderFromFolderList(this.datastoreService.CurrentFolder)
     }
   }
 }

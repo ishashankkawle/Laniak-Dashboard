@@ -9,8 +9,7 @@ import { CoreService } from './core-service.service';
   providedIn: 'root'
 })
 export class FolderService extends CoreService {
-
-
+  
   constructor(private http : HttpClient, private datastoreService : DatastoreService) 
   { 
     super()
@@ -44,5 +43,27 @@ export class FolderService extends CoreService {
   addFolderInFolderList(folderName : string)
   {
     this.datastoreService.FolderList.push(folderName);
+  }
+
+  removeFolderFromFolderList(currentFolder: string)
+  {
+    let temp = []
+    let removedFolder = ""
+    while(removedFolder != currentFolder)
+    {
+      removedFolder = this.datastoreService.FolderList.pop()
+      if(removedFolder != currentFolder)
+      {
+        console.log(removedFolder)
+        temp.push(removedFolder)
+      }
+    }
+    if(temp.length != 0)
+    {
+      for(let i = 0; i<temp.length; i++)
+      {
+        this.datastoreService.FolderList.push(temp.pop())
+      } 
+    }  
   }
 }
