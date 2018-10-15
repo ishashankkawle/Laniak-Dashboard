@@ -1,10 +1,10 @@
 import { Component, OnInit } from '@angular/core';
 import {MatDialogRef} from '@angular/material';
-import { DatastoreService } from '../../../services/datastore.service';
-import { FolderService } from '../../../services/folder-service.service';
-import { folderResponse } from '../../../Models/folderResponse';
-import { pageResponse } from '../../../Models/pageResponse';
-import { PageService } from '../../../services/page-service.service';
+import { DatastoreService } from '../../../../services/datastore.service';
+import { FolderService } from '../../../../services/folder-service.service';
+import { folderResponse } from '../../../../Models/folderResponse';
+import { pageResponse } from '../../../../Models/pageResponse';
+import { PageService } from '../../../../services/page-service.service';
 
 
 @Component({

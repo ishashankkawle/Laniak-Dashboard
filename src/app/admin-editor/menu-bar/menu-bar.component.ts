@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { SharedDataAssets } from '../../global/shareddata';
-import { DatastoreService } from '../../services/datastore.service';
+import { SharedDataAssets } from '../../../global/shareddata';
+import { DatastoreService } from '../../../services/datastore.service';
 import { OpenFolderPopupComponent } from './open-folder-popup/open-folder-popup.component';
 import {MatDialog} from '@angular/material';
 import { NewFolderPopupComponent } from './new-folder-popup/new-folder-popup.component';

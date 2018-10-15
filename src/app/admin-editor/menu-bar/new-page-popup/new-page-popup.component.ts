@@ -1,8 +1,8 @@
 import { Component, OnInit } from '@angular/core';
-import { MatDialogRef } from '../../../../node_modules/@angular/material/dialog';
-import { DatastoreService } from '../../../services/datastore.service';
-import { PageService } from '../../../services/page-service.service';
-import { fpCreationResponse } from '../../../Models/fpCreationResponse';
+import { MatDialogRef } from '../../../../../node_modules/@angular/material/dialog';
+import { DatastoreService } from '../../../../services/datastore.service';
+import { PageService } from '../../../../services/page-service.service';
+import { fpCreationResponse } from '../../../../Models/fpCreationResponse';
 
 @Component({
   selector: 'app-new-page-popup',

@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
-import { DatastoreService } from '../../services/datastore.service';
-import { EditorService } from '../../services/editor-service.service';
-import { PageService } from '../../services/page-service.service';
+import { DatastoreService } from '../../../services/datastore.service';
+import { EditorService } from '../../../services/editor-service.service';
+import { PageService } from '../../../services/page-service.service';
 
 @Component({
   selector: 'app-page-list',

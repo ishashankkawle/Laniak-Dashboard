@@ -1,0 +1,19 @@
+<div class="row container valign-wrapper" style="height: -webkit-fill-available">
+  <div class="col s6 offset-s3">
+    <div class="card horizontal">
+      <div class="card-image valign-wrapper">
+        <img src="../../../assets/logo.png" height="132px" width="132px">
+      </div>
+      <div class="card-stacked">
+        <div class="card-content">
+          <form>
+            <input type="text" name="username" placeholder="Email" [(ngModel)]="username" class="login-field"><br>
+            <input type="password" name="password" placeholder="Password" [(ngModel)]="password" class="login-field"><br><br>
+            <!--input type="Submit" value="Enter" routerLink="/admin-panel" -->
+            <input type="Submit" value="Enter" (click)="login()">
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

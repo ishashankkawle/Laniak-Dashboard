@@ -1,8 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { MatDialogRef } from '@angular/material';
-import { DatastoreService } from '../../../services/datastore.service';
-import { PageService } from '../../../services/page-service.service';
-import { EditorService } from '../../../services/editor-service.service';
+import { DatastoreService } from '../../../../services/datastore.service';
+import { PageService } from '../../../../services/page-service.service';
+import { EditorService } from '../../../../services/editor-service.service';
 
 @Component({
   selector: 'app-remove-page-popup',

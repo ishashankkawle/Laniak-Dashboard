@@ -1,9 +1,9 @@
 import { Component, OnInit } from '@angular/core';
-import { MatDialogRef } from '../../../../node_modules/@angular/material/dialog';
-import { DatastoreService } from '../../../services/datastore.service';
-import { PageService } from '../../../services/page-service.service';
+import { MatDialogRef } from '../../../../../node_modules/@angular/material/dialog';
+import { DatastoreService } from '../../../../services/datastore.service';
+import { PageService } from '../../../../services/page-service.service';
 import { HttpErrorResponse } from '@angular/common/http';
-import { EditorService } from '../../../services/editor-service.service';
+import { EditorService } from '../../../../services/editor-service.service';
 
 @Component({
   selector: 'app-open-page-popup',
