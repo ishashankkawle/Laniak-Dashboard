@@ -1,46 +1,40 @@
 <!--Section Top Menu Bar-->
-<div class="row col s12 TopMenu" style="margin-bottom: 0px;">
+<div class="row col s12 TopMenu" style="margin-bottom: 0px;padding-bottom: 0px; padding-left: 0px; padding-right: 0px;">
 
   <!--Logo Section-->
-  <div class="col s4 valign-wrapper">
+  <div class="col s4 valign-wrapper" style="margin-bottom: 25px;">
     <div class="col s4 center-align">
-      <img src="../../assets/logoDesign.png" width="65" height="65" style="padding:0px"/>
+      <img src="../../assets/logoDesign.png" width="65" height="65" style="padding:0px" />
     </div>
     <div class="col s8">
-        <div class="col s12">
-          <span class="truncate">{{datastoreService.CurrentFolder}}</span>
-        </div>
-        <div class="col s12">
-          <span class="truncate">{{datastoreService.CurrentPage}}</span>
-        </div>
+      <div class="col s12">
+        <span class="truncate">{{datastoreService.CurrentFolder}}</span>
+      </div>
+      <div class="col s12">
+        <span class="truncate">{{datastoreService.CurrentPage}}</span>
+      </div>
     </div>
   </div>
 
   <!--Folder Menu Section-->
-  <div class="col s8">
-    <div class="col s6 right CardMenu">
-      <div class="col s4" (click)="newFolderClick()">
-        New Folder
-      </div>
-      <div class="col s4" (click)="openFolderClick()">
-        Open Folder
-      </div>
-      <div class="col s4">
-        Remove Folder
-      </div>
+  <div class="col s12 FolderMenu valign-wrapper">
+    <div class="col MenuBtn valign-wrapper" (click)="newFolderClick()">
+      <i class="material-icons">create_new_folder</i><b>New</b>
     </div>
-  </div>
-
-  <!-- Page Menu Section-->
-  <div class="row col s12 PageMenu">
-    <div class="col s1 MenuButton" (click)="newPageClick()">
-      New Page
+    <div class="col MenuBtn valign-wrapper" (click)="openFolderClick()">
+      <i class="material-icons">folder_open</i><b>Open</b>
     </div>
-    <div class="col s1 MenuButton" (click)="openPageClick()">
-      Open Page
+    <div class="col MenuBtn valign-wrapper">
+      <i class="material-icons">delete_sweep</i><b>Remove</b>
     </div>
-    <div class="col s1 MenuButton"  (click)="removePageClick()">
-      Remove Page
+    <div class="col MenuBtn valign-wrapper" (click)="newPageClick()">
+      <i class="material-icons">note_add</i><b>Add</b>
+    </div>
+    <div class="col MenuBtn valign-wrapper" (click)="openPageClick()">
+      <i class="material-icons">description</i><b>Open</b>
+    </div>
+    <div class="col MenuBtn valign-wrapper" (click)="removePageClick()">
+      <i class="material-icons">restore_page</i><b>Remove</b>
     </div>
   </div>
 </div>

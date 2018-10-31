@@ -9,4 +9,5 @@ export class SharedDataAssets
     static FOLDER = "tree"
     static FILE = "blob"
     static LANIAK_ADMIN_ACCESS_TOKEN = "ztEQQRwzk_75ndnWc3yD"
+    static REPO = "DOCS"
 }   

@@ -4,6 +4,7 @@ import { FolderService } from '../../../services/folder-service.service';
 import { folderResponse } from '../../../Models/folderResponse';
 import { pageResponse } from '../../../Models/pageResponse';
 import { PageService } from '../../../services/page-service.service';
+import { SharedDataAssets } from 'src/global/shareddata';
 
 @Component({
   selector: 'app-card-list',
@@ -12,6 +13,7 @@ import { PageService } from '../../../services/page-service.service';
 })
 export class FolderListComponent implements OnInit 
 {
+  Repo = SharedDataAssets.REPO
   SelectedFolder : string;
   constructor(private datastoreService : DatastoreService, private folderService : FolderService, private pageService : PageService) 
   {
