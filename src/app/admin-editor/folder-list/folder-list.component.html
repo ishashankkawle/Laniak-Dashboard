@@ -1,11 +1,25 @@
-<div class="col s12 FolderList">
-  <span class="Title">Folders in {{Repo}}</span>
-  <br><br>
-  <div class="col s12 ListOfFolders">
-    <ul class="Folders">
-      <li class="item valign-wrapper" *ngFor = "let folder of this.datastoreService.FolderList" (click) = "onSelected(folder)" [class.itemSelected] = "folder === datastoreService.CurrentFolder"> 
-        <i class="material-icons FolderLogo">folder</i>{{folder}}
-      </li>
-    </ul>
+<div *ngIf="datastoreService.getFolderPopupStatus()">
+  <div class="lan-background-flare" (click)="datastoreService.closeFolderPopup()"></div>
+  <div class="card lan-popup border-0 shadow-lg rounded m-2">
+    <div class="lan-card-header bg-white">
+      <div class="row justify-content-between align-items-center">
+        <div class="col-sm-9">
+          <h2 class="lan-card-title mb-0">Folders in {{Repo}}</h2>
+          <span class="lan-card-subtitle text-muted">Select the folder to open pages</span>
+        </div>
+        <div class="col-sm-2">
+          <button type="button" class="btn btn-sm" (click)="newFolderClick()"><span class="inline-icon material-icons">add</span></button>
+        </div>
+      </div>
+    </div>
+
+    <div class="card-body">
+      <ul class="list-unstyled">
+        <li class="item" *ngFor="let folder of this.datastoreService.FolderList" (click)="onSelected(folder)"
+          [class.itemSelected]="folder === datastoreService.CurrentFolder">
+          <span class="inline-icon material-icons">folder</span>{{folder}}
+        </li>
+      </ul>
+    </div>
   </div>
 </div>

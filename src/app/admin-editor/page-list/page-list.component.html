@@ -1,10 +1,22 @@
-<div class="row col s2 PageList">
-  <span class="Title">List of Pages</span>
-  <br><br>
-  <div class="col s12 ListOfPages">
-    <ul class="Pages">
-      <li class="item valign-wrapper" *ngFor = "let page of this.datastoreService.PageList"  (click) = "onSelected(page)" [class.itemSelected] = "page === datastoreService.CurrentPage">  
-        <i class="material-icons tiny PageLogo">content_copy</i>{{page}}<i class="material-icons PageLogo tiny deleteIcon" (click)=onDelete(page)>cancel</i>
+<div *ngIf="datastoreService.getPagePopupStatus()">
+  <div class="lan-background-flare" (click)="datastoreService.closePagePopup()"></div>
+  <div class="card lan-popup border-0 shadow-lg rounded m-2">
+    <div class="lan-card-header bg-white">
+      <div class="row justify-content-between align-items-center">
+        <div class="col-sm-9">
+          <h2 class="lan-card-title mb-0">Page List</h2>
+          <span class="lan-card-subtitle text-muted">Select the Page to open in editor</span>
+        </div>
+        <div class="col-sm-2">
+          <button type="button" class="btn btn-sm" (click)="newPageClick()"><span class="inline-icon material-icons">add</span></button>
+        </div>
+      </div>
+    </div>
+
+    <div class="card-body">
+      <ul class="list-unstyled">
+      <li class="d-flex justify-content-between item" *ngFor = "let page of this.datastoreService.PageList"  (click) = "onSelected(page)" [class.itemSelected] = "page === datastoreService.CurrentPage">  
+        <div><span class="inline-icon material-icons">article</span><span>{{page}}</span></div><div><span class="inline-icon material-icons" (click)=onDelete(page)>cancel</span></div>
       </li>
     </ul>
   </div>

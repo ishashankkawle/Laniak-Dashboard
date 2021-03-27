@@ -20,16 +20,16 @@
 {
     background-color: white;
     padding: 5px;
-    border-bottom: 0.3px solid lightgray;
 }
 .item:hover
 {
     background-color: #eeeeee;
+    color: var(--lan-text-primary);
     cursor: pointer;
 }
 .itemSelected
 {
-    background-color: #6200EE;
+    background-color: #eca12a;
     color: white;
 }
 .FolderLogo

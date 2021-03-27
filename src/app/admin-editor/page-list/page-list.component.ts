@@ -11,7 +11,7 @@ import { PageService } from '../../../services/page-service.service';
 export class PageListComponent implements OnInit 
 {
   SelectedPage : string;
-
+  display = false;
   constructor(private datastoreService : DatastoreService, public editor : EditorService, public pageService : PageService)
    { }
 
@@ -30,4 +30,8 @@ export class PageListComponent implements OnInit
     this.pageService.deletePage(page).subscribe(()=> this.pageService.removePageFromPageList(page))
   }
 
+  newPageClick() : void
+  {
+    this.datastoreService.openNewPagePopup();
+  }
 }

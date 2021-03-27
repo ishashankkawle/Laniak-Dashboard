@@ -1,0 +1,12 @@
+.lan-text-avatar-box
+{
+    margin: 0.5%;
+    display: inline-block;
+    vertical-align: middle;
+    position: relative;
+    border: 1px solid;
+    color: #FFF;
+    border-radius: 50%;
+    height: 34px;
+    width: 34px;
+}

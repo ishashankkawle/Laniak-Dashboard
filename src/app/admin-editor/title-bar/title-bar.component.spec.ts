@@ -1,20 +1,20 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { OpenPagePopupComponent } from './open-page-popup.component';
+import { TitleBarComponent } from './title-bar.component';
 
-describe('OpenPagePopupComponent', () => {
-  let component: OpenPagePopupComponent;
-  let fixture: ComponentFixture<OpenPagePopupComponent>;
+describe('TitleBarComponent', () => {
+  let component: TitleBarComponent;
+  let fixture: ComponentFixture<TitleBarComponent>;
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ OpenPagePopupComponent ]
+      declarations: [ TitleBarComponent ]
     })
     .compileComponents();
   }));
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(OpenPagePopupComponent);
+    fixture = TestBed.createComponent(TitleBarComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

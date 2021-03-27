@@ -1,6 +1,68 @@
 /* You can add global styles to this file, and also import other style files */
-@import "~@angular/material/prebuilt-themes/deeppurple-amber.css";
+/*@import "~@angular/material/prebuilt-themes/deeppurple-amber.css";*/
+:root {
+    --lan-font-open-sans:'Open Sans', sans-serif;
+    --lan-bg-0: #f2f6f7;
+    --lan-text-primary:#212121;
+    --lan-text-secondry:#757575;
+    --lan-text-subsecondry:#a4a4a4;
+}
 
+body
+{
+    font-family: var(--lan-font-open-sans);
+    background-color: var(--lan-bg-0);
+    font-size: 0.8rem;
+    overflow-x: hidden;
+}
+
+
+.lan-card-header
+{
+    padding-left: 24px;
+    padding-right: 24px;
+    padding-top: 16px;
+    padding-bottom: 16px;
+    margin-bottom: 0;
+    background-color: rgba(0,0,0,.03);
+    border-bottom: 1px solid rgba(0,0,0,.125);
+}
+.lan-card-title
+{
+    font-size: 0.9rem;
+    color:var(--lan-text-primary);
+    letter-spacing: 0.0125em;
+}
+.lan-card-subtitle
+{
+    font-size: 12px;
+    color:var(--lan-text-subsecondry)!important;
+    letter-spacing: 0.0125em;
+}
+.lan-popup
+{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+.lan-background-flare
+{
+    content: '';
+    opacity:0.5;
+    position: fixed;
+    background-color: var(--lan-text-primary);
+    top:0;
+    left:0;
+    right:0;
+    bottom: 0;
+}
+.inline-icon 
+{
+    vertical-align: bottom;
+    font-size: 1.2rem;
+    margin-right: 10px;
+}
 
 /* Scrollbar */
 ::-webkit-scrollbar

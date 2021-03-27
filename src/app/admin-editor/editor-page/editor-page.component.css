@@ -1,96 +1,71 @@
-.EditorPanal
-{
-    background-color: #eeeeee;
-    min-height: 450px;
+.Lan-Editor-Ico {
+    height: 12px;
+    width: 12px;
+  }
+  
+  .EditorPanal 
+  {
     height: auto;
-    padding: 50px;
-    border-top: 1px solid black;
-    margin-right: 0px;
-}
-.Editor
-{
-    width: 100%;
-    height: 100%;
-    resize: vertical;
-    border: none;
-    border-bottom: 2px solid #9575CD;
     padding: 10px;
-}
-.Editor:focus
-{
-   outline: none;
-}
-.EditorPage
-{
-    background-color: white;
-    padding-top: 20px;
-    padding-bottom: 20px;
-    padding-left: 10px;
-    padding-right: 10px;
+    margin: 5px !important;
+    z-index: -1;
+  }
+  
+  .EditorPage {
+    border: 0.1px solid var(--lan-text-subsecondry);
     height: 100%;
     margin-bottom: 0px;
-}
-.EditorDisplayLine
-{
-    background-color: white;
-    padding: 2px;
-}
-.EditorIcon
-{
-    background-color: #9C27B0;
-    color: white;
+  }
+
+  .Box {
+    font-size: 13px;
     padding: 10px;
-    margin-right: 10px;
-}
-.Box
-{
-    border: 1px solid #eeeeee;
-}
-.Component
-{
+    color:var(--lan-color);
+  }
+  .Component {
     border: none;
     justify-content: center;
-    border-radius: 0px;
     padding: 5px;
-    background: white;
-}
-.Comp-sec
-{
-    margin-left: 3px; 
-}
-.editor-action
-{
-    padding-top: 5.625px;
-    padding-bottom: 5.625px;
-    padding-left: 11.250px;
-    padding-right: 11.250px;
-    margin-left:2px;
-    margin-right: 2px; 
-    color: white;
-    border: 0px;
-    border-radius: 4px;
-}
-.editor-action-save
-{
-    background-color: #4daf50;
-}
-.editor-action-reset
-{
-    background-color: #0367d1;
-}
-.editor-action-clear
-{
-    background-color: #e43b4c; 
-}
-.editor-action-save:hover
-{
-    background-color: #218838 ;
-}
-.editor-action-reset:hover
-{
-    background-color: #0354ab;
-}
-.editor-action-clear:hover
-{
-    background-color: #c82333; 
-}
+    max-height: 30px;
+    background-color: white;
+    margin: 1px;
+    border: 0.2px solid transparent;
+  }
+  .Component-Hidden
+  {
+    visibility: hidden;
+    width: 0px;
+    height: 0px;
+    margin: 0px;
+    padding: 0px;
+  }
+  .Component:hover {
+    outline: 0;
+    border: 0.2px solid var(--lan-text-subsecondry); /* here configure as your needs */
+    margin: 1px !important;
+    cursor:pointer;
+  }
+  .Component:focus {
+    outline: 0;
+    border: 0.2px solid var(--lan-text-subsecondry); /* here configure as your needs */
+    margin: 1px !important;
+  }
+  .ComponentMenu {
+    margin-bottom: 5px;
+  }
+  .Component-Right
+  {
+    float:right;
+  }
+  [contenteditable] {
+    outline: 0px solid transparent;
+  }
+  .PlaceholderText
+  {
+    font-size:12px;
+    font-family: var(--lan-default-font);
+  }
+  .Theme-Icon
+  {
+    fill: var(--lan-theme-color);
+  }

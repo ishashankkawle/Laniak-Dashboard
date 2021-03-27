@@ -1,23 +1,24 @@
 <!--Section Top Menu Bar-->
-<div class="row col s12 TopMenu" style="margin-bottom: 0px;padding-bottom: 0px; padding-left: 0px; padding-right: 0px;">
+<div class="row"
+  style="margin-bottom: 0px;padding-bottom: 0px; padding-left: 0px; padding-right: 0px;">
 
   <!--Logo Section-->
-  <div class="col s4 valign-wrapper" style="margin-bottom: 25px;">
-    <div class="col s4 center-align">
+  <!-- <div class="col-sm-4" style="margin-bottom: 25px;">
+    <div class="col-sm-4 center-align">
       <img src="../../assets/logoDesign.png" width="65" height="65" style="padding:0px" />
     </div>
-    <div class="col s8">
-      <div class="col s12">
-        <span class="truncate">{{datastoreService.CurrentFolder}}</span>
+    <div class="col-sm-8">
+      <div class="col-sm-12">
+        <span class="truncate">{{datastoreService.CurrentFolder}}</span><span>
       </div>
-      <div class="col s12">
-        <span class="truncate">{{datastoreService.CurrentPage}}</span>
+      <div class="col-sm-12">
+        <span class="truncate">{{datastoreService.CurrentPage}}</span><span>
       </div>
     </div>
-  </div>
+  </div> -->
 
   <!--Folder Menu Section-->
-  <div class="col s12 FolderMenu valign-wrapper">
+  <!-- <div class="col-sm-12 FolderMenu valign-wrapper">
     <div class="col MenuBtn valign-wrapper" (click)="newFolderClick()">
       <i class="material-icons">create_new_folder</i><b>New</b>
     </div>
@@ -36,5 +37,26 @@
     <div class="col MenuBtn valign-wrapper" (click)="removePageClick()">
       <i class="material-icons">restore_page</i><b>Remove</b>
     </div>
-  </div>
+  </div> -->
+
+  <nav class="navbar navbar-light bg-white">
+    <a class="navbar-brand" href="#" style="margin-top: 10%;margin-bottom: 10%;">
+      <img src="../../../assets/logoDesign.jpeg" alt="" width="30" height="24" class="d-inline-block align-center">
+      Laniak Editor
+    </a>
+    <ul class="nav flex-column" style="font-size: 12px !important;width: -webkit-fill-available;">
+      <li class="nav-item nav-box" (click)="newFolderClick()">
+        <a style="text-decoration: none;color:var(--lan-text-secondry)"><span class="inline-icon material-icons">create_new_folder</span><span >Add Folder</span></a>
+      </li>
+      <li class="nav-item nav-box" (click)="openFolderClick()">
+        <a style="text-decoration: none;color:var(--lan-text-secondry)"><span class="inline-icon material-icons">folder_open</span><span >Open Folder</span></a>
+      </li>
+      <li class="nav-item nav-box" (click)="newPageClick()">
+        <a style="text-decoration: none;color:var(--lan-text-secondry)"><span class="inline-icon material-icons">post_add</span><span >Add Page</span></a>
+      </li>
+      <li class="nav-item nav-box" (click)="openPageClick()">
+        <a style="text-decoration: none;color:var(--lan-text-secondry)"><span class="inline-icon material-icons">launch</span><span >Open Page</span></a>
+      </li>
+    </ul>
+  </nav>
 </div>

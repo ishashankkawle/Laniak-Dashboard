@@ -1,12 +1,10 @@
 import { Component, OnInit } from '@angular/core';
-import { SharedDataAssets } from '../../../global/shareddata';
 import { DatastoreService } from '../../../services/datastore.service';
-import { OpenFolderPopupComponent } from './open-folder-popup/open-folder-popup.component';
 import {MatDialog} from '@angular/material';
-import { NewFolderPopupComponent } from './new-folder-popup/new-folder-popup.component';
-import { NewPagePopupComponent } from './new-page-popup/new-page-popup.component';
-import { OpenPagePopupComponent } from './open-page-popup/open-page-popup.component';
-import { RemovePagePopupComponent } from './remove-page-popup/remove-page-popup.component';
+import { NewPagePopupComponent } from '../new-page-popup/new-page-popup.component';
+import { FolderListComponent } from '../folder-list/folder-list.component';
+import { FolderService } from 'src/services/folder-service.service';
+import { PageService } from 'src/services/page-service.service';
 
 @Component({
   selector: 'app-menu-bar',
@@ -15,7 +13,8 @@ import { RemovePagePopupComponent } from './remove-page-popup/remove-page-popup.
 })
 export class MenuBarComponent implements OnInit 
 {
-  constructor(private datastoreService : DatastoreService,public dialog : MatDialog) 
+  folderComp: FolderListComponent;
+  constructor(private datastoreService : DatastoreService,public dialog : MatDialog , private folderService : FolderService , private pageService : PageService) 
   { }
 
   ngOnInit() 
@@ -23,35 +22,49 @@ export class MenuBarComponent implements OnInit
 
   newFolderClick(): void
   {
-    let dialogRef = this.dialog.open(NewFolderPopupComponent,{width: '500px'});
+    if(this.datastoreService.getNewFolderPopupStatus()) 
+    {
+      this.datastoreService.closeNewFolderPopup();
+    }
+    else
+    {
+      this.datastoreService.openNewFolderPopup();
+    }
   }
 
   openFolderClick(): void
   {
-    let dialogRef = this.dialog.open(OpenFolderPopupComponent,{width: '500px'});
-
-    // Un-comment following to add additional functionality 
-    // dialogRef.afterClosed().subscribe(result => {});
+    if(this.datastoreService.getFolderPopupStatus()) 
+    {
+      this.datastoreService.closeFolderPopup();
+    }
+    else
+    {
+      this.datastoreService.openFolderPopup();
+    }
   }
 
   newPageClick(): void
   {
-    let dialogRef = this.dialog.open(NewPagePopupComponent,{width: '500px'});
+    if(this.datastoreService.getNewPagePopupStatus()) 
+    {
+      this.datastoreService.closeNewPagePopup();
+    }
+    else
+    {
+      this.datastoreService.openNewPagePopup();
+    }
   }
 
   openPageClick(): void
   {
-    let dialogRef = this.dialog.open(OpenPagePopupComponent,{width: '500px'});
-
-    // Un-comment following to add additional functionality 
-    // dialogRef.afterClosed().subscribe(result => {});
-  }
-
-  removePageClick(): void
-  {
-    let dialogRef = this.dialog.open(RemovePagePopupComponent,{width: '500px'});
-
-    // Un-comment following to add additional functionality 
-    // dialogRef.afterClosed().subscribe(result => {});
+    if(this.datastoreService.getPagePopupStatus()) 
+    {
+      this.datastoreService.closePagePopup();
+    }
+    else
+    {
+      this.datastoreService.openPagePopup();
+    }
   }
 }

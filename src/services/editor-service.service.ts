@@ -11,11 +11,11 @@ export class EditorService {
 
   public loadTextOnEditor(text : string)
   {
-    document.getElementById('notepad').innerText = text
+    document.getElementById('notepad').innerHTML = text
   }
 
   public getTextFromEditor()
   {
-    return document.getElementById('notepad').innerText;
+    return document.getElementById('notepad').innerHTML;
   }
 }

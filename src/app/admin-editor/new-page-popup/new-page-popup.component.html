@@ -1,0 +1,19 @@
+<div *ngIf="datastoreService.getNewPagePopupStatus()">
+  <div class="lan-background-flare" (click)="datastoreService.closeNewPagePopup()"></div>
+  <div class="card lan-popup border-0 shadow-lg rounded m-2">
+    <div class="lan-card-header bg-white">
+      <div class="row justify-content-between align-items-center">
+        <h2 class="lan-card-title mb-0">Your page will be added in <b>{{datastoreService.CurrentFolder}}</b></h2>
+        <span class="lan-card-subtitle text-muted">By default the extention will be .md</span>
+      </div>
+    </div>
+
+    <div class="card-body d-flex justify-content-between">
+      <div class="input-group input-group-sm mb-3">
+        <input type="text" placeholder="New Page name" class="form-control mr-2" aria-label="Default" aria-describedby="inputGroup-sizing-default" [(ngModel)]="pageName">
+        <button type="button float-right" class="btn btn-sm btn-primary align-self-end" (click)="onPageCreate()">Create</button>
+      </div>
+    </div>
+
+  </div>
+</div>

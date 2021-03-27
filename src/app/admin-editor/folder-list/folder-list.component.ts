@@ -15,9 +15,9 @@ export class FolderListComponent implements OnInit
 {
   Repo = SharedDataAssets.REPO
   SelectedFolder : string;
+  display = false; 
   constructor(private datastoreService : DatastoreService, private folderService : FolderService, private pageService : PageService) 
-  {
-  }
+  { }
 
   ngOnInit() 
   { }
@@ -30,4 +30,8 @@ export class FolderListComponent implements OnInit
     this.pageService.loadPages(this.SelectedFolder).subscribe((data : pageResponse[]) => this.pageService.assignPageList(data))
   }
 
+  newFolderClick() : void
+  {
+    this.datastoreService.openNewFolderPopup();
+  }
 }

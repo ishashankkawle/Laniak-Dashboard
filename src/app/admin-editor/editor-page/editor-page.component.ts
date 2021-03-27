@@ -21,31 +21,41 @@ export class EditorPageComponent implements OnInit {
   }
 
   makeBold() {
-    document.execCommand('bold', false, null);
+    document.execCommand('bold', false);
   }
 
   makeItalic() {
-    document.execCommand('italic', false, null);
+    document.execCommand('italic', false);
   }
 
   makeUnderLine() {
-    document.execCommand('underline', false, null);
+    document.execCommand('underline', false);
   }
 
   makeStrikeThrough() {
-    document.execCommand('strikeThrough', false, null);
+    document.execCommand('strikeThrough', false);
   }
 
   alignLeft() {
-    document.execCommand('justifyLeft', false, null);
+    document.execCommand('justifyLeft', false);
   }
 
   alignCenter() {
-    document.execCommand('justifyCenter', false, null);
+    document.execCommand('justifyCenter', false);
   }
 
   alignRight() {
-    document.execCommand('justifyRight', false, null);
+    document.execCommand('justifyRight', false);
+  }
+
+  triggerFontColorPicker()
+  {
+    document.getElementById('lan-font-col-picker').click();
+  }
+
+  triggerHighlightColorPicker()
+  {
+    document.getElementById('lan-highlight-col-picker').click();
   }
 
   copy() {
@@ -57,7 +67,7 @@ export class EditorPageComponent implements OnInit {
   }
 
   setFontColor() {
-    document.execCommand('foreColor', false, this.fontColor);
+    document.execCommand('foreColor', false , this.fontColor);
   }
 
   setHighLightColor() {
@@ -65,15 +75,15 @@ export class EditorPageComponent implements OnInit {
   }
 
   subScript() {
-    document.execCommand('subscript', false, null);
+    document.execCommand('subscript', false);
   }
 
   superScript() {
-    document.execCommand('superscript', false, null);
+    document.execCommand('superscript', false);
   }
 
   increaseSize() {
-    document.execCommand('increaseFontSize', false, null);
+    document.execCommand('increaseFontSize', false);
   }
 
   saveData()

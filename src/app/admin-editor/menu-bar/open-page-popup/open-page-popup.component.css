@@ -1,9 +1,0 @@
-.Page-List-Item
-{
-    margin:1px;
-}
-.Page-List-Item :hover
-{
-    background-color: #BDBDBD;
-    cursor: pointer;
-}
