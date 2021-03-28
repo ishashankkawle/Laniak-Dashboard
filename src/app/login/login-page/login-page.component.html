@@ -1,19 +1,27 @@
-<div class="row container valign-wrapper" style="height: -webkit-fill-available">
-  <div class="col s6 offset-s3">
-    <div class="card horizontal">
-      <div class="card-image valign-wrapper">
-        <img src="../../../assets/logoV.png" height="132px" width="132px" style="margin-left:20px; margin-right : 5px;">
+<div class="row lan-login-background align-items-center" style="height: 100%; width:100%; position:absolute; left:0; right:0; top:0; bottom:0;">
+  <div class="col-sm-3 offset-sm-2" style="margin-right: 10%;">
+    <div class="card mb-3 mt-3 pt-2">
+      <div class="card-img-top ">
+        <img src="../../../assets/logoDesign.png" height="132px" width="132px"
+          style="margin-left:20px; margin-right : 5px;">
       </div>
-      <div class="card-stacked">
-        <div class="card-content">
-          <form>
-            <input type="text" name="username" placeholder="Email" [(ngModel)]="username" class="login-field"><br>
-            <input type="password" name="password" placeholder="Password" [(ngModel)]="password" class="login-field"><br><br>
-            <!--input type="Submit" value="Enter" routerLink="/admin-panel" -->
-            <input type="Submit" value="Enter" (click)="login()">
-          </form>
-        </div>
+      <div class="card-body">
+        <h5 class="card-title">Laniak</h5>
+        <p class="card-text">Laniak is an online documentation web portal where you can find all the necessary resources to start with yor idea.</p>
+        <a class="card-text" style="text-decoration:none; cursor: pointer;"><span class="material-icons inline-icon">navigate_next</span><small class="text-muted">Visit Laniak Home</small></a>
       </div>
     </div>
+  </div>
+
+  <div class="col-sm-4" style="padding-left:10%; border-left: 0.5px solid var(--lan-bg-0);">
+    <form>
+      <div class="input-group mb-3">
+        <input type="email" name="username" placeholder="Email" [(ngModel)]="username" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default">
+      </div>
+      <div class="input-group mb-3">
+        <input type="password" name="password" placeholder="Password" [(ngModel)]="password" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default">
+      </div>
+      <button type="button" class="btn btn-sm btn-outline-warning align-self-end" (click)="login()">Login</button>
+    </form>
   </div>
 </div>

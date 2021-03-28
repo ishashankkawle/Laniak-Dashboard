@@ -8,7 +8,7 @@ export class DatastoreService
 { 
   public CurrentFolder = "Nothing opened";
   public CurrentPage = "Nothing opened";
-
+  IsUserAuthenticated = false;
   displayFolderPopup = false;
   displayPagePopup = false;
   displayNewFolderPopup = false;

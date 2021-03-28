@@ -11,8 +11,8 @@ import { CoreService } from './core-service.service';
 export class FolderService extends CoreService {
   
   constructor(private http : HttpClient, private datastoreService : DatastoreService) 
-  { 
-    super()
+  {
+    super();
   }
 
   loadFolders()

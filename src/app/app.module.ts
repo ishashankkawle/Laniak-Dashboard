@@ -9,6 +9,8 @@ import { PageService } from '../services/page-service.service';
 import { LoginModule } from './login/login.module';
 import { AdminEditorModule } from './admin-editor/admin-editor.module';
 import { AppRoutingModule } from './app-routing.module';
+import { CoreService } from 'src/services/core-service.service';
+import { AuthGuard } from './auth.guard';
 
 
 @NgModule({
@@ -21,7 +23,7 @@ import { AppRoutingModule } from './app-routing.module';
     LoginModule,
     AppRoutingModule
   ],
-  providers: [DatastoreService,FolderService,PageService],
+  providers: [DatastoreService,FolderService,PageService,CoreService , AuthGuard],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

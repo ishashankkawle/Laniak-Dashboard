@@ -7,6 +7,9 @@ import { HttpHeaders } from '@angular/common/http';
 })
 export class CoreService
 {
+  constructor(){
+    this.url = SharedDataAssets.BASE_URI
+  }
 
   public HeaderOptions = {
     headers : new HttpHeaders ({
@@ -24,10 +27,7 @@ export class CoreService
 
   public url: string;
 
-  constructor() 
-  {
-    this.url = SharedDataAssets.BASE_URI
-  }
+  
 
   public getCUJsonBody(data : string = 'Welcome to laniak', msg : string = 'New content created')
   {
@@ -44,5 +44,20 @@ export class CoreService
       "commit_message" : msg
     }
     return body
+  }
+
+  public authenticateLogin(username: string , password: string)
+  {
+    console.log("Inside : Core Service")
+    if(username == "admin" && password == "asdf@123")
+    {
+      console.log("AUTHENTICATED SUCCESSFULLY")
+      return true;
+    }
+    else
+    {
+      console.log("AUTHENTICATION FAILED")
+      return false;
+    }
   }
 }
